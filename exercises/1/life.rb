@@ -48,7 +48,11 @@ end
 # ***********
 
 def print_arr(arr)
-  nil
+  arr.each do |x|
+    arr.each do |y|
+      puts arr[x][y] ? "x" : "."
+    end
+  end
 end
 
 # EXECUTION STARTS HERE
