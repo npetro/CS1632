@@ -57,6 +57,9 @@ end
 
 # EXECUTION STARTS HERE
 
+create_arr(Random::new, ARGV[0].to_i, ARGV[1].to_i)
+print_arr(arr)
+
 raise "Enter integers for size, percentage (1..100), and number of iterations at command line" unless ARGV.count == 3
 size, percent, iters = ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i
 
