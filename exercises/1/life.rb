@@ -47,18 +47,24 @@ end
 # ...........
 # ***********
 
-def print_arr(arr)
+def print_arr(arr,size)
   arr.each do |x|
-    arr.each do |y|
-      puts arr[x][y] ? "x" : "."
+    x.each do |y|
+      print y ? "x" : "."
     end
+    puts
   end
+  #for end
+  size.times do 
+    print ("*")
+  end
+  puts
 end
 
 # EXECUTION STARTS HERE
 
-create_arr(Random::new, ARGV[0].to_i, ARGV[1].to_i)
-print_arr(arr)
+myArr = create_arr(Random::new, ARGV[0].to_i, ARGV[1].to_i)
+print_arr(myArr, ARGV[0].to_i)
 
 raise "Enter integers for size, percentage (1..100), and number of iterations at command line" unless ARGV.count == 3
 size, percent, iters = ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i
