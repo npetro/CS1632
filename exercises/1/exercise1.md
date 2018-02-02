@@ -53,14 +53,14 @@ Remember that we are on a Euclidean 2-torus, so neighbors may exist "wrapped aro
 1n..nn
 2.....
 3.....
-4...nn
+4n..nn
 ```
 
 The game shall continue for the number of iterations expressed at the command line.  This is true _even if_ the game is static (i.e. all cells are dead, or are stuck in a static pattern and never changing).
 
 At each iteration, the program shall execute the Rules of Conway's Game of Life (listed below) on the current array and print out the resulting array.  The resulting array shall then become the current array.
 
-The program shall accept three arguments: size (size of the 2-D array - the number of rows and columns should always be equal, an integer > 0), percentage to be randomly assigned to be living (an integer between 0 and 100 inclusive), and the number of iterations to run (and integer >= 0).
+The program shall accept three arguments: size (size of the 2-D array - the number of rows and columns should always be equal, an integer > 0), percentage to be randomly assigned to be living (an integer between 0 and 100 inclusive), and the number of iterations to run (an integer >= 0).
 
 If a different number of arguments has been passed in, an error message should be displayed indicating this and the program exits.
 
