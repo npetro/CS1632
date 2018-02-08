@@ -1,7 +1,7 @@
 # CS 1632 - Software Quality Assurance
 Spring Semester 2017 - Exercise 2
 
-For this exercise, you and a partner will create a WolfPack simulator.  However, the Wolf class on which it depends is broken!  You will need to use stubs and doubles in order to write your own code and test it.
+For this exercise, you and a partner will create a WolfPack simulator.  However, the Wolf class on which it depends is broken!  You will need to use stubs, dummies, doubles and mocks in order to write your own code and test it.
 
 You are NOT to modify the Wolf class itself, i.e., wolf.rb should not be edited.  You may assume that it is a third-party library or code belonging to another team.
 
@@ -13,9 +13,9 @@ This is an exercise and is thus not graded.
 
 ## Wolf Pack Simulator
 
-The Wolf Pack Simulator allows you to add a wolf, determine the biggest wolf in the pack, make one random wolf bark, or make all the wolves in the pack howl.
+The Wolf Pack Simulator allows you to add a wolf, determine the size of biggest wolf in the pack, return the name of a random (technically pseudorandom) wolf, or make all the wolves in the pack howl.
 
-You are going to modify the methods and write tests for these relatively simple methods, with your tests not referring to 
+You are going to modify the methods and write tests for these relatively simple methods, with your tests not referring directly to the class wolf.  Note that your CODE should not use doubles, only your tests.
 
 You should write at least one test for each method, and stub or double when appropriate.  Ideally, you should do an equivalence class partioning and write a test for each equivalence class, but this is not necessary for this exercise.
 
