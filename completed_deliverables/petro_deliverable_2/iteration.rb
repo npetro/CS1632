@@ -5,13 +5,13 @@ class Iterate
 	#Performs an iteration of the program
 	def iterate(number, the_locs, the_vias)
 		#Setup for single driver
-		old_loc = the_locs.locations[Random.new.rand(0..3)]
+		old_loc = the_locs.locations[Random.rand(0..3)]
 		new_driver = Driver.new(number, @old_loc)
 		continue = true
 		#Loop until driver leaves town
 		while(continue)
 			#Randomly select next location from possible
-			new_loc = old_loc.nodes[Random.new.rand(0..1)]
+			new_loc = old_loc.nodes[Random.rand(0..1)]
 			#Find road
 			via = the_vias.find_via(old_loc.name, new_loc.name)
 			#Output to console
