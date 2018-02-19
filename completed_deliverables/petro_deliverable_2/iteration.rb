@@ -6,7 +6,7 @@ class Iterate
 	def iterate(number, the_locs, the_vias)
 		#Setup for single driver
 		old_loc = the_locs.locations[Random.rand(0..3)]
-		new_driver = Driver.new(number, @old_loc)
+		new_driver = Driver.new(number, old_loc)
 		continue = true
 		#Loop until driver leaves town
 		while(continue)
@@ -33,6 +33,14 @@ class Iterate
 			return false
 		else
 			return true
+		end
+	end
+
+	def check_seed(arg)
+		if arg.is_a?(Integer)
+			return arg.to_i
+		else
+			return 0
 		end
 	end
 end

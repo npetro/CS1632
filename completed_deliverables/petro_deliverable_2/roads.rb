@@ -28,8 +28,7 @@ class Roads
 		elsif (@fifth.locations.include?(loc1) && @fifth.locations.include?(loc2))
 			return @fifth
 		else
-			puts ("Error!! Something has gone horribly wrong and you ripped through the space-time continuum to somewhere you should not be...")
-			exit
+			return(false)
 		end
 	end	
 end

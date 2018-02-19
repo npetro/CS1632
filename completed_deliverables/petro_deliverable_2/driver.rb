@@ -3,6 +3,9 @@ class Driver
 	# Creates a new Driver
 	attr_accessor :number
 	attr_accessor :location
+	attr_accessor :classes
+	attr_accessor :books
+	attr_accessor :dinos
 
 	def initialize number, location
 		@number = number
