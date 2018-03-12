@@ -1,7 +1,9 @@
 # CS 1632 - Software Quality Assurance
 Spring Semester 2018
 
-DUE 12 MAR (MON/WED) / 13 MAR (TUE/THU)
+~DUE 12 MAR (MON/WED) / 13 MAR (TUE/THU)~
+
+UPDATED: DUE 14 MAR (MON/WED) / 15 MAR (TUE/THU)
 
 ## Deliverable 3
 
@@ -39,6 +41,8 @@ For the summary, describe how you profiled the application in approximately one 
 The summary should be approximately a page. 
 
 On a separate page, you should include a screenshot of the flame graph.  You should  _also_ include the generated .html file in your repository.
+
+You may experience issues rendering very large flamegraphs on your browser, especially if you use `long.txt`.  Feel free to use the flamegraph for `sample.txt` if this is the case.
 
 There should be at least twelve unit tests.  It is up to you if you would like to use more, use mocks/doubles/stubs or not, etc.  There just must be at least twelve valid unit tests.
 
