@@ -19,7 +19,70 @@ Note that the second midterm is _not_ cumulative, except in the sense that the t
   
 ## PROPERTY-BASED TESTING
 * Be able to write simple property-based tests with Rantly
-	######TODO
+
+```ruby
+  #Calculating the cost to buy a stock should always
+  #result in a positive result (>0).
+
+  def test_cost_always_positive
+  property_of {
+    share_price = float
+    num_shares = integer
+    [share_price, num_shares]
+  }.check { |share_price, num_shares|
+    value = @market.calculate_cost(share_price, num_shares)
+    assert value > 0
+  }
+  end
+  
+  #Generating an initial value of a stock should always
+  #create a stock value of between $1.00 and $30.00
+  #(inclusive)
+  
+  def test_starting_price_in_correct_range
+    property_of {
+      integer
+    }.check { |seed|
+      initial_price = @market.initial_price(seed)
+      assert initial_price >= 1.0 && initial_price <= 30.0
+    }    
+  end
+
+  #The price of a stock should always result in a Numeric
+  #value.  If a stock doesn't exist, should return -1, which
+  #is still a Numeric
+
+  def test_price_always_numeric
+    property_of {
+      string
+    }.check { |name|
+      assert_kind_of Numeric, @market.price(name)
+    }
+  end
+
+  
+  #After iteration, the values of the stock market should
+  #always be positive (there should never be a negative-value
+  #stock)
+  #Note - this is going to be a little more difficult
+  #because of the statefulness; luckily you have an
+  #access to the prices hash.
+  def test_stock_price_always_positive
+    property_of {
+      integer
+    }.check { |seed|
+      # set all prices to 0.01
+      @market.prices.each { |k,v|
+        @market.prices[k] = 0.01
+      }
+      @market.iterate(seed)
+      @market.prices.each { |k,v|
+        assert v >= 0
+      }
+    }
+    
+  end
+  ```
 * Be able to name invariants given a function and sample input/output
 	* **Invariants: the properties of the allowed input and that the output should always hold**
 * Be able to show how invariants are broken
@@ -64,8 +127,8 @@ Note that the second midterm is _not_ cumulative, except in the sense that the t
 	* **Formal verfication: Mathematically prove the behavior of a program from first principles**
 	* **Compilers: can check syntax, uncaught exceptions, dead code, etc.**
 * You do NOT need to know specific Rubocop/Reek errors, but should understand what they do and what they might catch or not
-	* **Might catch: silly and simple errors, style deficiencies, and **
-	* **Might not:**
+	* **Might catch: silly and simple errors, style deficiencies, and syntax errors**
+	* **Might not: declaration, method, sanitization, etc. (pretty much anything dynamic)**
 * Understand code coverage and be able to calculate
 	* **See Below**
 * Understand difference between statement and method coverage
@@ -80,7 +143,7 @@ Note that the second midterm is _not_ cumulative, except in the sense that the t
 	* **Users: How does this impact the functionality important to me?**
 	* **Customers: How does this impact what I'm getting or how much I'm paying?**
 * Be prepared for some "fake" interaction with various stakeholders
-	######TODO
+	* **"Fake" interaction is basically when the interaction is fake**
 * Be able to put together a red-yellow-green template report
 	* **Red: system or subsystem has extremely serious issues which will almost certainly impact the timeline or financials unless they are remediated**
 	* **Yellow: there are some warning flags, but they can be dealt with, some outside help may be necessary**
@@ -157,4 +220,4 @@ Note that the second midterm is _not_ cumulative, except in the sense that the t
 	* **Insecure object references: someone can access soemthing by knowing where it is, despite not having proper security credentials**
 	* **Social engineering: manipulating people socially to gain access to information those people know**
 * How does security testing differ from other kinds of testing?
-	######TODO
+	* **Security testing differs from other kinds of testing because security testing is trying to close all doors, but only one door left open will fail security testing, however bugs in other types of testing are almost inevitable and are still okay**
