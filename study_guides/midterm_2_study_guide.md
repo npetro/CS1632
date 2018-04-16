@@ -11,9 +11,10 @@ Note that the second midterm is _not_ cumulative, except in the sense that the t
 	* **Commands: Open, Click, Type, Assert**
 	* **Targets: Webpage Elements**
 	* **Values: What to expect of the Elements or Command**
-	* Opening a URL
-	* Clicking on a link
-	* Testing for text
+	* **On Exam:**
+		* Opening a URL
+		* Clicking on a link
+		* Testing for text
 * You will not need to know about specifying target selection, but do need to know what target selection is and recognize it (i.e. if I show you a webpage, I will note specific target values for different elements - you will not need to read raw HTML)
   
 ## PROPERTY-BASED TESTING
@@ -42,7 +43,7 @@ Note that the second midterm is _not_ cumulative, except in the sense that the t
 	* **Static: is where the code is not executed**
 	* **Dynamic: is where the code is executed**
 * Understand limitations of static testing
-	######TODO
+	* **Limitations of static testing usually are surrounding the fact that no matter how good a program is at analyzing code, there will always be things that are missed based on what compiler is used or just interactions that will result in unexpected outcomes when the program is run dynamically**
 * Know different kinds of static analysis, and tools and methods used 
 	* **Linters: automated way of checking format and style of code**
 	* **Bug finders: try to find bugs without running code -- a lot of false positives!**
@@ -63,7 +64,8 @@ Note that the second midterm is _not_ cumulative, except in the sense that the t
 	* **Formal verfication: Mathematically prove the behavior of a program from first principles**
 	* **Compilers: can check syntax, uncaught exceptions, dead code, etc.**
 * You do NOT need to know specific Rubocop/Reek errors, but should understand what they do and what they might catch or not
-	######TODO
+	* **Might catch: silly and simple errors, style deficiencies, and **
+	* **Might not:**
 * Understand code coverage and be able to calculate
 	* **See Below**
 * Understand difference between statement and method coverage
